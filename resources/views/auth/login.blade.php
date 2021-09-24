@@ -4,6 +4,7 @@
 
 {!! Form::open() !!}
 
+<div id="login">
 <p>DAWNSNSへようこそ</p>
 
 {{ Form::label('e-mail') }}
@@ -11,9 +12,10 @@
 {{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}
 
-{{ Form::submit('ログイン') }}
+{{ Form::submit('LOGIN') }}
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+<p class="link"><a href="/register">新規ユーザーの方はこちら</a></p>
+</div>
 
 {!! Form::close() !!}
 

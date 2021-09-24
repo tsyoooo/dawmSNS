@@ -5,5 +5,40 @@ html{
 }
 body{
     height: 100%;
-    background: #3C4767;
+    color: #fff;
+    background: linear-gradient(to bottom, #3C4767 70%, #de563b);
+    text-align: center;
+}
+
+h1{
+    margin-top: 30%;
+}
+
+#container{
+    width: 100%;
+}
+
+#login{
+    background-color: #000;
+    opacity: 0.5;
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px 0 5px 0;
+}
+
+p{
+    margin-bottom: 40px;
+}
+
+form{
+    display: block;
+}
+
+.link{
+    margin-top: 40px;
+}
+
+.link a{
+    font-style: none;
+    color: #fff;
 }

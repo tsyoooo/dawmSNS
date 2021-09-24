@@ -4,6 +4,7 @@
 
 {!! Form::open() !!}
 
+<div id="login">
 <h2>新規ユーザー登録</h2>
 
 {{ Form::label('ユーザー名') }}
@@ -20,7 +21,8 @@
 
 {{ Form::submit('登録') }}
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p class="link"><a href="/login">ログイン画面へ戻る</a></p>
+</div>
 
 {!! Form::close() !!}
 
