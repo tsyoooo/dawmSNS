@@ -38,17 +38,31 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-    
-    public function login(Request $request){
+
+
+    //ログインする
+    public function login(Request $request){//入力されたデータを$requestに格納
+        //isMethod 指定した文字列とHTTP動詞(post通信 or get通信)が一致するかを調べる
         if($request->isMethod('post')){
-            
-            $data=$request->only('mail','password');
+
+            $data=$request->only('mail','password','username');
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと
-            if(Auth::attempt($data)){
+            if(Auth::attempt($data)){//attempt:認証が成功すればtrueを返します。失敗時はfalseを返します。
                 return redirect('/top');
+                        //->with('data', $data['username']);//with('ビューで使う変数名', $ビューに渡す値)
             }
         }
         return view("auth.login");
+    }
+
+    //ログアウトする
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
+        //Auth::guard($this->getGuard())->logout();
+
+        //return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : 'login');
     }
 }

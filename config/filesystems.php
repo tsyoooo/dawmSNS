@@ -48,6 +48,12 @@ return [
             'root' => storage_path('app'),
         ],
 
+        //追加
+        'public_uploads' => [
+            'driver' => 'local',//laravel上に保存
+            'root'   => public_path(),//public内に保存
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password',
+        'username', 'mail', 'password', 'bio' ,'images',
     ];
 
     /**
@@ -26,4 +26,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setAttribute($key, $value){
+    if ($key !== $this->getRememberTokenName()) {
+    parent::setAttribute($key, $value);
+    }
+    }
+
+    /**
+     * Relationships
+     */
+
+    /*フォローしてるユーザー情報をすべて取得取得*/
+    public function follows()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'follow', 'follower');
+    }
+
+    /*フォロワーのユーザー情報をすべて取得取得*/
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'follow', 'follower');
+    }
 }
