@@ -404,6 +404,10 @@ input[type="file"] {
     flex-grow: 1;
 }
 
+.btn_right{
+    flex-grow: 1;
+}
+
 .followbtn{
     border-radius: 5px;
     padding: 10px 15px;
@@ -440,7 +444,7 @@ input[type="file"] {
 
 /*フォローリスト*/
 .follow_list{
-    margin-left: 40px;
+    margin: 10px 0 0 40px;
     font-size: 2em;
     color: #6C6C6C;
 }

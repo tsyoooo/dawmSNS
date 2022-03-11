@@ -37,7 +37,7 @@
 
                     <div class="gnavi">
                         <ul>
-                            <li><a href="/home">HOME</a></li>
+                            <li><a href="/top">HOME</a></li>
                             <li><a href="/profileEdit">プロフィール編集</a></li>
                             <li><a href="/logout">ログアウト</a></li>
                         </ul>
