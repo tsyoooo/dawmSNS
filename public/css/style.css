@@ -349,6 +349,7 @@ label{
     color: #6C6C6C;
     font-size: 1.6em;
     margin-right: 30px;
+    width: 200px;
 }
 
 .file_wrapper{
@@ -393,8 +394,13 @@ input[type="file"] {
     border-bottom: 3px solid #6C6C6C;
 }
 
+.userlist-contents{
+    width: 100%;
+}
+
 .userlist{
     display: flex;
+    justify-content: space-between;
     margin: 20px 0;
 }
 
@@ -408,9 +414,20 @@ input[type="file"] {
     flex-grow: 1;
 }
 
+.username{
+    width: 250px;
+    font-size: 1.4em;
+    margin-left: 20px;
+}
+
 .followbtn{
+    width: 40%;
     border-radius: 5px;
-    padding: 10px 15px;
+    border: none;
+    padding: 10px 0;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    color: #fff;
 }
 
 .red{

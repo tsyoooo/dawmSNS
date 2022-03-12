@@ -16,7 +16,7 @@
     @foreach ($users as $users)
     <div class="userlist">
       <div class="icon_name_left flex-grow">
-          <div class="images"><img class="h-icon flex-grow" src="images/{{$users->images}}"></div>
+          <div class="images"><img class="img flex-grow" src="images/{{$users->images}}"></div>
           <div class="username color flex-grow">{{$users->username}}</div>
       </div>
 
