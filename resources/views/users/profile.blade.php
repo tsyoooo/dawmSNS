@@ -19,6 +19,16 @@
       </div>
     @endforeach
 
+    <div class="btn_right flex-grow">
+      <!--もしfollowsテーブルのフォローに自分のIDがなければ=フォローしていなければ-->
+      @if(!in_array($profileUser->id,array_column($followBtn,'follow')))
+      <button class="followbtn" type=“button” onclick="location.href='/follow/{{$profileUser->id}}/profile'">フォローする</button>
+
+      @else
+      <button class="unfollowbtn" type=“button” onclick="location.href='/unfollow/{{$profileUser->id}}/profile'">フォローを外す</button>
+      @endif
+      </div>
+
   </div>
 
 

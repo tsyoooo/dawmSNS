@@ -83,7 +83,7 @@ header a{
   top: 102px; /*表示位置を指定*/
   right: 0; /*表示位置を指定*/
   text-align: center; /*テキストを中央揃え*/
-  width: 30%; /*全幅表示*/
+  width: 20%; /*全幅表示*/
 }
 
 .gnavi ul{
@@ -191,6 +191,7 @@ header a{
     height: 50px;
     border: none;
     outline: none;
+    font-size: 1.2em;
 }
 
 #container{
@@ -198,13 +199,21 @@ header a{
 }
 
 .posts_btn{
-    width: 30px;
-    height: 30px;
+    border: none;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+.posts_btn img{
+    width: 50px;
+    height: 50px;
 }
 
 .table{
     width: 100%;
     border-top: 4px solid #aaa;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .posts_table{
@@ -253,16 +262,20 @@ header a{
     float: right;
 }
 
-.posts_edit::after{
-    background-image: url("images/trash_h.png") no-repeat;
+.posts_edit{
+  position: relative;
 }
 
-.btn-danger:hover {
-	background-color: transparent; /* IE6対応 */
+.posts_edit .hover{
+  position: absolute;
+  left: 45px;
+  top: 0;
+  opacity: 0;
+  transition: 0.5s;
 }
 
-.btn-danger:hover img {
-    visibility: hidden;
+.posts_edit .hover:hover {
+  opacity: 1;
 }
 
 /*モーダルレイアウト*/
@@ -272,22 +285,34 @@ header a{
     position: absolute;
     top: 35%;
     left: 25%;
-    height: 15%;
+    height: 100px;
     width: 50%;
-    padding: 10px;
+    padding: 30px 35px 30px 30px;
     border: 3px solid #aaa;
     background-color: #fff;
     z-index:2;
     position:fixed;
 }
 
-.form-group{
-    text-align: center;
+.update_box{
+    width: 100%;
 }
 
 .update_text{
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #6C6C6C;
+    border-radius: 5px;
+    font-size: 1.4em;
+    color: #6C6C6C;
+    padding: 10px 5px;
+}
+
+.update_btn{
+    float: right;
+    border: none;
+    background-color: #fff;
+    margin-top: 20px;
 }
 
 .update_btn img{
@@ -394,8 +419,17 @@ input[type="file"] {
     border-bottom: 3px solid #6C6C6C;
 }
 
+.search{
+    width: 50%;
+    height: 30px;
+    font-size: 1.6em;
+    border-radius: 5px;
+    margin-left: 80px;
+}
+
 .userlist-contents{
     width: 100%;
+    margin: 0 auto;
 }
 
 .userlist{
@@ -408,23 +442,24 @@ input[type="file"] {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    margin-left: 100px;
 }
 
 .btn_right{
     flex-grow: 1;
 }
 
-.username{
+.userlist .username{
     width: 250px;
     font-size: 1.4em;
     margin-left: 20px;
 }
 
 .followbtn{
-    width: 40%;
+    width: 170px;
     border-radius: 5px;
     border: none;
-    padding: 10px 0;
+    padding: 10px 10px;
     box-sizing: border-box;
     font-size: 1.2em;
     color: #fff;
@@ -443,13 +478,6 @@ input[type="file"] {
     display: flex;
     justify-content: space-around;
     margin: 15px 0;
-}
-
-.search{
-    width: 80%;
-    height: 30px;
-    font-size: 1.6em;
-    border-radius: 5px;
 }
 
 .keyword{
