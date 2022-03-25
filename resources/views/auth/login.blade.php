@@ -9,7 +9,13 @@
 
 <div class="form">
 {{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+{{ Form::text('mail',null,['class' => 'input input_bottom" name="" value="">']) }}
+
+<div class="error">
+@if ($errors->has('mail'))
+    {{$errors->first('mail')}}
+@endif
+</div>
 
 {{ Form::label('password') }}
 {{ Form::password('password',['class' => 'input']) }}

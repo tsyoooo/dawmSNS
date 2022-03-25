@@ -45,7 +45,7 @@ class FollowsController extends Controller
         ->join('follows','users.id','=','follows.follower')
         ->join('posts','users.id','=','posts.user_id')
         ->where('follow','=',Auth::id())//followerカラムとログイン者の数字が同じidを取り出す
-        ->select('users.images','users.username','posts.*')
+        ->select('users.id','users.images','users.username','posts.*')
         ->get();
         //dd($followerList);
 

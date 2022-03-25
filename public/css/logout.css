@@ -45,11 +45,18 @@ h2{
     margin:  0 auto;
 }
 
+.label{
+    margin-bottom: 5px;
+}
+
 .input{
     display: flex;
-    width: 95%;
-    margin: 5px auto 5px;
+    width: 100%;
+    margin: 5px 0;
     height: 1.5em;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 .error{
@@ -60,6 +67,9 @@ h2{
 .submit{
     background-color: #5963a2;
     color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
 }
 
 .submit_box{

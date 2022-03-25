@@ -85,7 +85,7 @@ class UsersController extends Controller
 
     //検索ページ表示
     public function search(){
-        $users = \DB::table('users')->select('users.id','users.images','users.username')->get();
+        $users = \DB::table('users')->where('id','!=',Auth::id())->select('users.id','users.images','users.username')->get();
         $followList = \DB::table('follows')->where('follower',Auth::id())->get()->toArray();
 
         return view('users.search',['users'=>$users,'followList'=>$followList]);
@@ -137,8 +137,8 @@ class UsersController extends Controller
 
         $profile = \DB::table('users')
         ->where('id',$id)
-        ->select('users.images','users.username','users.bio')
-        ->get();
+        ->select('users.id','users.images','users.username','users.bio')
+        ->first();
 
         $followBtn = \DB::table('follows')->where('follower',Auth::id())->get()->toArray();
 

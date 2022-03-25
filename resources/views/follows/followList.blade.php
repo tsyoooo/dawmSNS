@@ -17,7 +17,8 @@
         <div class="posts_table">
 
          <div class="posts_left">
-            <div class="icon"><img class="img posts_img" src="images/{{ $followList->images }}"></div>
+            <div class="icon"><a href="{{ $followList->user_id }}/profile">
+              <img class="img posts_img" src="images/{{ $followList->images }}"></a></div>
          </div>
 
          <div class="posts_right">

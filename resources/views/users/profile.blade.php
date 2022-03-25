@@ -2,32 +2,32 @@
 
 @section('content')
   <div class="profile_info">
-    @foreach ($profile as $profile)
 
-    <div class="profile_icon">
-        <img class="img posts_img" src="{{ asset('images/'. $profile->images) }}">
-      </div>
+    <div class="profile_left">
+        <div class="profile_icon">
+          <img class="img posts_img" src="{{ asset('images/'. $profile->images) }}">
+        </div>
 
-      <div class="main">
-        <div class="profile_name">Name</div>
-        <div class="profile_bio">Bio</div>
-      </div>
+        <div class="main">
+          <div class="profile_name">Name</div>
+          <div class="profile_bio">Bio</div>
+        </div>
 
-      <div class="paragraph">
-        <div class="profile_name">{{$profile->username}}</div>
-        <div class="profile_bio">{{$profile->bio}}</div>
-      </div>
-    @endforeach
+        <div class="paragraph">
+          <div class="profile_name">{{$profile->username}}</div>
+          <div class="profile_bio">{{$profile->bio}}</div>
+        </div>
+    </div>
 
-    <div class="btn_right flex-grow">
-      <!--もしfollowsテーブルのフォローに自分のIDがなければ=フォローしていなければ-->
-      @if(!in_array($profileUser->id,array_column($followBtn,'follow')))
-      <button class="followbtn" type=“button” onclick="location.href='/follow/{{$profileUser->id}}/profile'">フォローする</button>
+    <div class="btn_right">
+        <!--もしfollowsテーブルのフォローに自分のIDがなければ=フォローしていなければ-->
+        @if(!in_array($profile->id,array_column($followBtn,'follow')))
+        <button class="followbtn red" type=“button” onclick="location.href='/follow/{{$profile->id}}/profile'">フォローする</button>
 
-      @else
-      <button class="unfollowbtn" type=“button” onclick="location.href='/unfollow/{{$profileUser->id}}/profile'">フォローを外す</button>
-      @endif
-      </div>
+        @else
+        <button class="followbtn blue" type=“button” onclick="location.href='/unfollow/{{$profile->id}}/profile'">フォローを外す</button>
+        @endif
+     </div>
 
   </div>
 

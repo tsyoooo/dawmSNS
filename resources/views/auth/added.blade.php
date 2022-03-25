@@ -10,7 +10,7 @@
 <p>ユーザー登録が完了しました。<br>
 さっそく、ログインをしてみましょう。</p>
 
-<p class="btn"><a href="login">ログイン画面へ</a></p>
+<p class="btn"><a href="login" class="submit">ログイン画面へ</a></p>
 </div>
 </div>
 

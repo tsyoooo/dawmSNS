@@ -13,15 +13,20 @@ a{
 }
 
 .img{
+    display: block;
     width: 60px;
     height: 60px;
     border-radius: 60px;
+    cursor : pointer;
 }
 
 /* ヘッダー */
 header{
+    position:fixed;
+    z-index: 100;
+    height: 100px;
+    width: 100%;
     background: #3C4767;
-    padding: 0 30px;
     color: #fff;
 }
 
@@ -33,6 +38,7 @@ header a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 30px;
 }
 
 #user ul{
@@ -80,7 +86,7 @@ header a{
   display: none;
   position: fixed;
   z-index: 2; /*重ね順を変更*/
-  top: 102px; /*表示位置を指定*/
+  top: 100px; /*表示位置を指定*/
   right: 0; /*表示位置を指定*/
   text-align: center; /*テキストを中央揃え*/
   width: 20%; /*全幅表示*/
@@ -172,6 +178,11 @@ header a{
 /* トップページ */
 #row{
     display: flex;
+    padding-top: 100px;
+}
+
+#container{
+    flex: 0 0 80%;
 }
 
 .flex-grow{
@@ -180,6 +191,10 @@ header a{
 
 .posts_value{
     display: flex;
+}
+
+.post_register{
+    width: 100%;
 }
 
 .post_img{
@@ -192,10 +207,6 @@ header a{
     border: none;
     outline: none;
     font-size: 1.2em;
-}
-
-#container{
-    flex: 0 0 80%;
 }
 
 .posts_btn{
@@ -362,12 +373,12 @@ label{
 .edit{
     display: flex;
     align-items: center;
-    margin-bottom: 60px;
 }
 
 .error{
     display: block;
     color: red;
+    margin-bottom: 60px;
 }
 
 .edit label{
@@ -445,10 +456,6 @@ input[type="file"] {
     margin-left: 100px;
 }
 
-.btn_right{
-    flex-grow: 1;
-}
-
 .userlist .username{
     width: 250px;
     font-size: 1.4em;
@@ -466,7 +473,7 @@ input[type="file"] {
 }
 
 .red{
-    background-color: #7895d7;
+    background-color: #4b71ca;
 }
 
 .blue{
@@ -507,14 +514,31 @@ input[type="file"] {
 /*プロフィール*/
 .profile_info{
     display: flex;
-    width: 80%;
+    justify-content: space-between;
     margin: 30px 50px;
-    font-size: 1.6em;
     color: #6C6C6C;
     line-height: 2em;
 }
+
+.profile_info:nth-child(2){
+    align-self: flex-end;
+}
+
+.profile_left{
+    font-size: 1.6em;
+    display: flex;
+}
+
+.btn_right{
+    align-self: flex-end;
+}
+
 .main{
     margin: 0 30px;
+}
+
+.profile_name{
+    margin-bottom: 40px;
 }
 
 .paragraph{

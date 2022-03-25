@@ -29,7 +29,7 @@
 </div>
 
 {{ Form::label('Password') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+{{ Form::password('password',['class' => 'input']) }}
 
 <div class="error">
 @if ($errors->has('password'))
@@ -38,7 +38,9 @@
 </div>
 
 {{ Form::label('Password confirm') }}
-{{ Form::text('password_confirmation',null,['class' => 'input']) }}
+{{ Form::password('password_confirmation',['class' => 'input']) }}
+
+<div class="error"></div>
 
 <div class="submit_box">
 {{ Form::submit('REGISTER',['class' => 'submit']) }}

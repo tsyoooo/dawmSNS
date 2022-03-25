@@ -37,7 +37,12 @@ Route::get('/top','PostsController@index');
 //ログアウト
 Route::get('/logout','Auth\LoginController@logout');
 
-//更新
+
+//投稿
+Route::post('/top','PostsController@register');
+
+//投稿更新
+Route::get('/update', 'PostsController@upRegister')->name('posts.update');
 Route::post('/update', 'PostsController@update');
 //投稿削除
 Route::get('post/{id}/top','PostsController@delete');
@@ -55,7 +60,7 @@ Route::get('/searchResult','UsersController@searchResult');
 //フォローする
 Route::get('follow/{id}/search','UsersController@follow');
 Route::get('follow/{id}/searchResult','UsersController@follow');
-Route::get('unfollow/{id}/profile','UsersController@follow');
+Route::get('follow/{id}/profile','UsersController@follow');
 Route::get('/{id}/profile','UsersController@follow');
 //フォロー外す
 Route::get('unfollow/{id}/search','UsersController@unfollow');
@@ -70,4 +75,3 @@ Route::get('/followerlist','FollowsController@followerList');
 
 //プロフィール画面へ移行
 Route::get('/{id}/profile','UsersController@profile');
-Route::post('/{id}/profile','UsersController@profile');
