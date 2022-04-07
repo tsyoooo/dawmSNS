@@ -4,7 +4,7 @@
 
 <div id="login">
 <div id="clear">
-<p><span>{{Session::get('data')}}さん</span><br>
+<p><span>{{Session::get('data')}}さん</span><br><!--セッションに保存されている情報を呼び出す-->
 ようこそ！DAWNSNSへ！</p>
 
 <p>ユーザー登録が完了しました。<br>

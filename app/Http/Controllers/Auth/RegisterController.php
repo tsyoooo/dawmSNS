@@ -55,16 +55,16 @@ class RegisterController extends Controller
             'password_confirmation' => 'required|string|min:4|',
         ],
         [
-             'username.required' => '入力必須です。',
-             'username.required' => '入力必須です。',
-             'username.max' => '225文字以下で入力してください。',
-             'mail.required'  => '入力必須です。',
-             'mail.max'  => '225文字以下で入力してください。',
-             'mail.unique'  => '既に登録されたメールアドレスです。',
-             'password.required'  => '入力必須です。',
-             'password.min'  => '4文字以上で入力してください。',
-             'password.confirmed'  => 'パスワードが一致しません。',
-      ]);
+            'username.required' => '入力必須です。',
+            'username.required' => '入力必須です。',
+            'username.max' => '225文字以下で入力してください。',
+            'mail.required'  => '入力必須です。',
+            'mail.max'  => '225文字以下で入力してください。',
+            'mail.unique'  => '既に登録されたメールアドレスです。',
+            'password.required'  => '入力必須です。',
+            'password.min'  => '4文字以上で入力してください。',
+            'password.confirmed'  => 'パスワードが一致しません。',
+        ]);
     }
 
     /**
@@ -97,12 +97,7 @@ class RegisterController extends Controller
             $this->create($data);//return User::createにデータを渡す
             return redirect('added')
                         ->with('data', $data['username']);//with('ビューで使う変数名', $ビューに渡す値)
-
-
-            //$username = $request::all();
-            //return view('added',compact('data'));
             }
-
         }
         return view('auth.register');
     }

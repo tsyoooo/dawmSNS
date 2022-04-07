@@ -53,17 +53,17 @@
             <div id="confirm">
                 <p>{{$AuthUser->username}}さんの</p>
 
-                <div class="side-flex">
-                  <p>フォロー数</p>
-                  <p>{{$followNumber}}名</p>
-                </div>
-                <p class="btn"><a class="list-btn" href="/followlist">フォローリスト</a></p>
+            <div class="side-flex">
+                <p>フォロー数</p>
+                <p>{{$followNumber}}名</p>
+            </div>
+            <p class="btn"><a class="list-btn" href="/followlist">フォローリスト</a></p>
 
-                <div class="side-flex">
-                  <p>フォロワー数</p>
-                  <p>{{$followerNumber}}名</p>
-                </div>
-                <p class="btn"><a class="list-btn" href="/followerlist">フォロワーリスト</a></p>
+            <div class="side-flex">
+                <p>フォロワー数</p>
+                <p>{{$followerNumber}}名</p>
+            </div>
+            <p class="btn"><a class="list-btn" href="/followerlist">フォロワーリスト</a></p>
             </div>
 
             <div class="searchBtn">

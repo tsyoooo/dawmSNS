@@ -57,7 +57,8 @@ class PostsController extends Controller
 
     //  topページに投稿内容、ユーザー名を表示する
     public function index(){
-        $list = \DB::table('posts')->join('users','posts.user_id','=','users.id')//postsのuser_idとusersのidを結合
+        $list = \DB::table('posts')
+        ->join('users','posts.user_id','=','users.id')//postsのuser_idとusersのidを結合
         ->select('users.images','users.username','posts.*')//usersのimages,usersのusername,postsの全カラムを取り出す
         ->get();//postsテーブルからすべてのレコード情報をゲットする
 
@@ -82,6 +83,7 @@ class PostsController extends Controller
     {
         $id = $upPost['upId']; //input=取得する
         $up_post = $upPost['upPost'];
+
         \DB::table('posts')
             ->where('id', $id)
             ->update(
@@ -91,12 +93,9 @@ class PostsController extends Controller
 
     //  更新内容確認
     public function upRegister(Request $request){//入力されたデータを$requestに格納
-        //dd($id);
         $upPost = $request->input();
 
         $upPostValidator = $this->upValidator($upPost);//validatorの実行結果を$postValidatorに格納
-
-        //dd($upPost);
 
         if ($upPostValidator->fails()) {
         return redirect('/top')
@@ -109,7 +108,7 @@ class PostsController extends Controller
     }
 
 
-    //  delete機能
+    //delete機能
     public function delete($id)
     {
         \DB::table('posts')
@@ -118,6 +117,7 @@ class PostsController extends Controller
 
         return redirect('/top');
     }
+
 
     //ログアウトする
     public function logout(){

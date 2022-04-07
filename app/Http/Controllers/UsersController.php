@@ -30,13 +30,13 @@ class UsersController extends Controller
             'images' => 'file|image|mimes:jpeg,png,jpg,gif|max:50'
         ],
         [
-             'username.required' => '入力必須です。',
-             'username.max' => '225文字以下で入力してください。',
-             'mail.required'  => '入力必須です。',
-             'mail.max'  => '225文字以下で入力してください。',
-             'mail.unique'  => '既に登録されたメールアドレスです。',
-             'NewPassword.min'  => '4文字以上で入力してください。',
-      ]);
+            'username.required' => '入力必須です。',
+            'username.max' => '225文字以下で入力してください。',
+            'mail.required'  => '入力必須です。',
+            'mail.max'  => '225文字以下で入力してください。',
+            'mail.unique'  => '既に登録されたメールアドレスです。',
+            'NewPassword.min'  => '4文字以上で入力してください。',
+        ]);
     }
 
         /**
@@ -85,8 +85,15 @@ class UsersController extends Controller
 
     //検索ページ表示
     public function search(){
-        $users = \DB::table('users')->where('id','!=',Auth::id())->select('users.id','users.images','users.username')->get();
-        $followList = \DB::table('follows')->where('follower',Auth::id())->get()->toArray();
+        $users = \DB::table('users')
+                ->where('id','!=',Auth::id())
+                ->select('users.id','users.images','users.username')
+                ->get();
+
+        $followList = \DB::table('follows')
+                    ->where('follower',Auth::id())
+                    ->get()
+                    ->toArray();//toArray:リストから配列を作成します。
 
         return view('users.search',['users'=>$users,'followList'=>$followList]);
     }

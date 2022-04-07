@@ -26,6 +26,7 @@ class Controller extends BaseController
             ->get();
             //dd($user);
 
+
             //フォロー数の表示
             $followNumber = \DB::table('users')
             ->join('follows','users.id','=','follows.follow')

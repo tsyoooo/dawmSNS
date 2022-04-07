@@ -57,7 +57,7 @@
     </div>
 
     <!-- モーダル -->
-       <div id="modal{{ $list->id }}" class="modal_inner">
+        <div id="modal{{ $list->id }}" class="modal_inner">
           {!! Form::open(['url' => route('posts.update') ,'class' => 'update_box',  'method' => 'get']) !!}
           <div class="form-group">
               {!! Form::input('textarea', 'upPost', $list->posts, ['required', 'class' => 'update_text flex-glow', 'rows' => '5']) !!}

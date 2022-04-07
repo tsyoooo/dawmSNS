@@ -36,16 +36,16 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        //logout以外の処理はguest(ログインしていないユーザー)しかできない
         $this->middleware('guest')->except('logout');
     }
 
 
     //ログインする
     public function login(Request $request){//入力されたデータを$requestに格納
-        //isMethod 指定した文字列とHTTP動詞(post通信 or get通信)が一致するかを調べる
-        if($request->isMethod('post')){
+        if($request->isMethod('post')){//isMethod 指定した文字列とHTTP動詞(post通信 or get通信)が一致するかを調べる
 
-            $data=$request->only('mail','password','username');
+            $data = $request->only('mail','password','username');
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと
             if(Auth::attempt($data)){//attempt:認証が成功すればtrueを返します。失敗時はfalseを返します。
@@ -61,8 +61,5 @@ class LoginController extends Controller
     {
         Auth::logout();
         return redirect('/login');
-        //Auth::guard($this->getGuard())->logout();
-
-        //return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : 'login');
     }
 }

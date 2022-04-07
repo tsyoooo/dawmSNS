@@ -12,7 +12,7 @@
 {{ Form::text('mail',null,['class' => 'input input_bottom" name="" value="">']) }}
 
 <div class="error">
-@if ($errors->has('mail'))
+@if ($errors->has('mail'))<!--リクエストに値が存在するかを判定する-->
     {{$errors->first('mail')}}
 @endif
 </div>
